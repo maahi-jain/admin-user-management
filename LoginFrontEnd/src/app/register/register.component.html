@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-8">
+        <img src="../../assets/registerImage.jpg" width="800px" height="600px" alt="">
+    </div>
+    <mat-card class="col-4">
+        <mat-card-header>
+            <div class="display-3">Register</div>
+        </mat-card-header>
+        <mat-card-content>
+            <form action="" [formGroup]="registerForm" (ngSubmit)=register()>
+                <div class="form-group">
+                    <label for="userName">Username:</label>
+                    <input type="text" maxlength="15" class="form-control" formControlName="userName" id="userName">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" minlength="8" class="form-control" formControlName="password" id="password">
+                    <span id="passwordError"
+                        *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                        class="text-danger">Must contain alphabets, numbers and special character </span>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" formControlName="name" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="emailId">Email-Id:</label>
+                    <input type="email" class="form-control" formControlName="emailId" id="emailId">
+                </div>
+                <div class="form-group">
+                    <label for="contactNumber">Contact Number:</label>
+                    <input type="text" class="form-control" formControlName="contactNumber" id="contactNumber">
+                    <span id="contactNumberError"
+                        *ngIf="registerForm.get('contactNumber')?.invalid && registerForm.get('contactNumber')?.touched"
+                        class="text-danger">Must be of 10 digits</span>
+                </div>
+                <div class="form-group">
+                    <label for="dob">DOB:</label>
+                    <input type="date" class="form-control" formControlName="dob" id="dob">
+                    <span id="DOBError" *ngIf="registerForm.get('dob')?.invalid && registerForm.get('dob')?.touched"
+                        class="text-danger">Cannot be greater than today date</span>
+                </div>
+                <div>
+                    <button class="btn btn-primary" type="submit" [disabled]="registerForm.invalid">Register</button>
+                </div>
+            </form>
+            <div *ngIf="errorMessage!=null" class="text-danger">
+                {{errorMessage}}
+            </div>
+            <div *ngIf="successMessage!=null" class="text-success">
+                {{successMessage}}
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

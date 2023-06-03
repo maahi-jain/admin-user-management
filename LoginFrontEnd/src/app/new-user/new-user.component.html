@@ -1,0 +1,23 @@
+<div>
+    <h2 mat-dialog-title>New User Registration</h2>
+    <mat-dialog-content class="box" [formGroup]="newUser">
+            <mat-form-field appearance="outline">
+                <mat-label for="name">Name:</mat-label>
+                <input matInput type="text" formControlName="name" id="name">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label for="emailId">Email-Id:</mat-label>
+                <input matInput type="email" formControlName="emailId" id="emailId">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label for="contactNumber">Contact Number:</mat-label>
+                <input matInput type="text" formControlName="contactNumber" id="contactNumber">
+                <mat-error id="contactNumberError"
+                    *ngIf="newUser.get('contactNumber')?.invalid && newUser.get('contactNumber')?.touched"
+                    class="text-danger">Must be of 10 digits
+                </mat-error>
+            </mat-form-field>
+            <button type="submit" (click)="addUser()" class="btn btn- block btn-primary"
+            [disabled]=newUser.invalid>Register</button>
+    </mat-dialog-content>
+</div>

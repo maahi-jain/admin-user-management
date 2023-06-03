@@ -1,0 +1,63 @@
+body {
+    background-image: url(../../assets/4.jpg);
+    background-size: cover;
+    height: 100vh;
+    overflow-y: overlay;
+}
+
+
+.delete {
+    color: red;
+    cursor: pointer;
+}
+
+th {
+    font-weight: bold;
+}
+
+.add {
+    float: right;
+    margin-top: 20px;
+}
+
+.userDetails {
+    margin-top: 50px;
+    margin: 20px;
+}
+
+.addIcon {
+    padding-top: 4px;
+}
+
+mat-row:nth-child(odd) {
+    background-color: white;
+}
+
+mat-row:nth-child(even) {
+    background-color: #fafafa;
+}
+
+td:first-child {
+    padding-right: 50px;
+}
+.hi{
+    height:87px;
+    width: 87px;
+}
+
+.box{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.display-2{
+    background:white;
+}
+
+.hiCard{
+    padding:20px;
+}
+
+.adminDetails{
+    display: inline-block;
+}
